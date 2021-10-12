@@ -1,0 +1,8 @@
+Copy the arcgispro-py3 enviroment folder from: 
+C:\Program Files\ArcGIS\Pro\bin\Python\envs\
+
+Then paste it in your Anaconda folder enviroment:
+C:\HYapp\Anaconda3\envs\
+
+Your final URL for usage in the app is:
+C:\HYapp\Anaconda3\envs\arcgispro-py3
