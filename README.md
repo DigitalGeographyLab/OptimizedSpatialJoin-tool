@@ -36,13 +36,13 @@ You need to save your own files in folders: `app_data`, and `regions_layer`. You
  
 ### 1. Uploading social media posting history
 
-OptiSS starts with a short explanation and includes the link to this section. Then the first part is to upload you social media dataset. You first select your file stored in folder `app_data` and specify the columns of *timestamp*, *longitude*, *latitude*, and *user id*. You will notice that data is loaded when the local app ends *running process* at the right-upper corner. Then you press the button *Show on map* if prefered. It will look like this:
+OptiSS starts with a short explanation and includes the link to this section. Then the first part is to upload your social media dataset. You first select your file stored in folder `app_data` and specify the columns of *timestamp*, *longitude*, *latitude*, and *user id*. You will notice that data is loaded when the local app ends *running process* at the right-upper corner. Then you press the button *Show on map* if prefered. It will look like this:
 
 ![1. upload data](png/optiss1.png)
 
 ### 2. Uploading regions layer for spatial joining
 
-Then, you select your file stored in folder `regions_layer`. Be sure you stored in *.shp* format and in crs *WGS 84*. It will looks like this:
+Then, you select your file stored in folder `regions_layer`. Be sure you stored in *.shp* format and in crs *WGS 84*. It will look like this:
 
 ![2. upload regions data](png/optiss2.png)
 
@@ -54,23 +54,23 @@ Finally, you have to specify the URL where the *Arcpy environment* is stored. Th
 ![3. arcpy environment](png/optiss3.png)
 
 ### Results
-Once the process started correctly with Arcpy environment you will notice ballons on the screen. This is a good sign. Finally, the result is an *optiss demo data.shp* file stored in a new folder called `optiss_result`. At the moment you open the result you will notice how the social media posts contain the attributes of the region layer including the ones out of the main land. The next image shows some post out of land between Estonia and Finland (left), and the view at EU level with country attribute (right):
+Once the process started correctly with Arcpy environment you will notice ballons on the screen. This is a good sign. Finally, the result is an *optiss demo data.shp* file stored in a new folder called `optiss_result`. At the moment you open the result you will notice how the social media posts contain the attributes of the region layer including the ones out of the main land. The next image shows some post out of land between Estonia and Finland (left), and the view at EU level with country attribute (right). Click over to see it bigger:
 
 ![5 result view](png/5_result.png)
 
 ## How to set up OptiSS?
 
-Simply, clone the repository in your computer, open the repo directory in command line, and run ***streamlit run optiss-app.py***
+Simply, clone the repository in your computer, open the repo directory in command line, and run `streamlit run optiss-app.py`
  
 Step by step:
 1. Open Anaconda prompt (command line)
 2. Optional. Activate your own environment with all needed libraries if they are not in base environment
 3. Navigate to your the desired location to save Optiss in local disk. (i.e. `cd C:\Users\bryanval\DGL\Github\`)
-4. Clone the repository by typing `git clone https://github.com/DigitalGeographyLab/twitter-gadm-enrichment.git`
+4. Clone the repository by typing `https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool.git`
 5. Navigate to your repository by typing in command line `cd OptimizedSpatialJoin-tool` 
 6. Run the app by typing `streamlit run optiss-app.py`
 
-## Installing packages
+### Installing packages
 
 1. You need to have installed in Python 3 environment:
 
@@ -87,7 +87,7 @@ Step by step:
    * Then, copy the enviroment folder `arcgispro-py3` to your local folder of enviroments of Anaconda. Commonly the enviroments are located here `C:\HYapp\Anaconda3\envs\`
    * Finally, after the copy is done, the final URL is: `C:\HYapp\Anaconda3\envs\arcgispro-py3`
 
-## Make sure everything works
+### Make sure everything works
  
 1. Save your *social media posting history.csv* in folder `app_data` delimited by semicolons
    * Data must include columns *Longitude*, *Latitude*, *Timestamp*, *User_id*. You can change names
@@ -118,6 +118,7 @@ Note! For security there is also a copy of the result in the **arcpy_env.gdb**
 
 1. While ussing the tool. Keep ArcGIS pro console closed or not using your regions file. Otherwise, it will fail the process because of **lock** (file used by other console)
 2. If you want to create a new demo dataset with a second social media posting history be sure you have erased first **arcpy_env.gdb**. The tool do not do replacements. Basically, do all again if posible in a new folder.
+3. When social media posting history is too big some geometries fail in creation. In that case you need to run a line to correct geometry. This lines are already in the scripts but not activated to make it run faster. If you encounter geometry creation problems be aware to activate this lines by erasing the **#** simbol.
 
 ## Referencing
 
