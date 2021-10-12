@@ -4,7 +4,7 @@ The OptiSS Tool is a local app user friendly (hopefully =]) that optimize the sp
 
 The outcome is an enriched **optiss demo data.shp** that contains the attribute of administrative unit for each social media post location. You can find instructions about OptiSS in the next links:
 
-- [How does OptiSS work?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-does-optiss-work)
+- [What does OptiSS do?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#what-does-optiss-do)
 - [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss)
 - [How to set up OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-set-up-optiss)
 
@@ -12,7 +12,7 @@ For some experienced users that want to implement OptiSS algorithm in their own 
 
 - [Implementation of OptiSS in your workflow](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#manual-usage---implementation-in-your-own-workflow)
 
-## How does OptiSS work?
+## What does OptiSS do?
 
 OptiSS tool optimize the spatial joining of social media posting history with a regions layer.
 
