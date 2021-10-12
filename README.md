@@ -118,7 +118,7 @@ Note! For security there is also a copy of the result in the **arcpy_env.gdb**
 
 1. While ussing the tool. Keep ArcGIS pro console closed or not using your regions file. Otherwise, it will fail the process because of **lock** (file used by other console)
 2. If you want to create a new demo dataset with a second social media posting history be sure you have erased first **arcpy_env.gdb**. The tool do not do replacements. Basically, do all again if posible in a new folder.
-3. When social media posting history is too big some geometries fail in creation. In that case you need to run a line to correct geometry. This lines are already in the scripts but not activated to make it run faster. If you encounter geometry creation problems be aware to activate this lines by erasing the **#** simbol.
+3. When social media posting history is too big some geometries fail in creation. In that case you need to add a code line to correct geometry. Mentioned code lines are already in the scripts but not activated to make it run faster. If you encounter geometry creation problems be aware to activate this lines by erasing the **#** simbol.
 
 ## Referencing
 
