@@ -28,6 +28,11 @@ input_some_data = os.path.join(homefolder, 'app_data/{}'.format(name_some_data))
 
 # 2
 name_regions_layer = 'global_regions_fixed_wgs84.shp'
+
+region_folder = os.path.join(homefolder, 'regions_layer')
+if not os.path.exists(region_folder):
+    os.makedirs(region_folder)
+
 input_regions_layer = os.path.join(homefolder, 'regions_layer/{}'.format(name_regions_layer))
 
 #3
