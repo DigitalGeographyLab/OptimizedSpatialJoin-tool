@@ -7,7 +7,7 @@ The OptiSS is a user friendly local app (see: [What does OptiSS do?](https://git
 
 ## Why does it exist?
 
-In the BORDERSPACE project, we need to assign hierarchical spatial attributes to each geo-located tweet. Mostly, geo-located tweets obtained from Twitter’s API already have geographical information such as administrative unit and country, in addition to exact coordinates. But not all tweets have such information and most importantly, some twitts are not located at land – some are just off the coast or somewhere in an ocean. However, geodetic spatial join requires computational resources and is time consuming and when having +100 million geo-located tweets it is not feasible. Thus, we created OptiSS tool to make computation more efficient and save time. 
+In the BORDERSPACE project, we need to assign hierarchical spatial attributes to each geo-located tweet. Mostly, geo-located tweets obtained from Twitter’s API already have geographical information such as administrative unit and country, in addition to exact coordinates. But not all tweets have such information and most importantly, some tweets are not located at land – some are just off the coast or somewhere in an ocean. However, geodetic spatial join requires computational resources and is time consuming and when having +100 million geo-located tweet it is not feasible. Thus, we created OptiSS tool to make computation more efficient and save time. 
 
 ## What does OptiSS do?
 
