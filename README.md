@@ -18,13 +18,13 @@ To give an example, we tested the OptiSS tool with a global geo-located tweet da
 
 ## How to use OptiSS?
 
-OptiSS tool usage is explained in this example with a **twitter posting history** dataset at global level with 50244 posts of 500 unique users in 9 years period.  Next, you will see some details about the example and the steps that needs to be followed in OptiSS usage.
+OptiSS tool usage is explained in this example with a **twitter posting history** dataset at global level with 50244 posts of 500 unique users over 9 years period.  Next, you will see some details about the example and the steps that needs to be followed in OptiSS usage.
 
 ### Datasets
 
 You need to save your own files in folders: `app_data`, and `regions_layer`. You will find a [twitter sample dataset](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool/tree/main/app_data) in this repository containing 1000 posts from 4 unique users. But for this example OptiSS used next datasets:
 
-- **twitter posting history.csv** dataset at global level with 50244 posts, of 500 unique users, in 9 years posting history, delimited by semicolon. In folder `app_data`
+- **twitter posting history.csv** dataset at global level with 50244 posts, of 500 unique users, over 9 years posting history, delimited by semicolon. In folder `app_data`
 
 - **global_regions_fixed_wgs84.shp** (Database of [Global Administrative Areas](https://gadm.org/) - Internal use file). In folder `regions_layer`
  
