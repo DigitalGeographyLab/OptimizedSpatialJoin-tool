@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/416336274.svg)](https://zenodo.org/badge/latestdoi/416336274)
 # OptiSS 🧐 - Tool for optimizing spatial joining of big social media data
 
 The OptiSS is a tool to optimize spatial joining of big social media data with spatial layers developed in the [BORDERSPACE](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab/mobilities-and-interactions-of-people-crossing-state-borders-big-data-to-reveal-transnational-people-and-spaces) project at [Digital Geography Lab](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab).
