@@ -93,6 +93,7 @@ filepath = st.selectbox('Files in <app_data> folder:', options=data_list()[1])
 data = read_data(filepath)
 columns = list(data.columns)
 
+st.write('**Timestamp** column, and **User ID** column are used only for displaying info (optional columns) ')
 datacol1, datacol2, datacol3, datacol4 = st.columns(4)
 
 time_col = datacol1.selectbox('Timestamp column', options=columns)
