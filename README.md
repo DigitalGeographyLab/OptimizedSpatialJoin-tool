@@ -119,4 +119,4 @@ Note! For security there is also a copy of the result in the **arcpy_env.gdb**
 
 If you use this script in your research or project, or develop it further, please refer back to us using this:
 
-Vallejo, B. & Järv, O. (2021) Optiss: A tool to optimize spatial joining of big social media data. DOI: 
+Vallejo, B. & Järv, O. (2021) Optiss: A tool to optimize spatial joining of big social media data. DOI: 10.5281/zenodo.5566336	
