@@ -1,6 +1,6 @@
 # OptiSS 🧐 - Tool for optimizing spatial joining of big social media data
 
-The OptiSS is a tool to optimize spatial joining of big social media data with spatial layers developed in the BORDERSPACE project at Digital Geography Lab.
+The OptiSS is a tool to optimize spatial joining of big social media data with spatial layers developed in the [BORDERSPACE](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab/mobilities-and-interactions-of-people-crossing-state-borders-big-data-to-reveal-transnational-people-and-spaces) project at [Digital Geography Lab](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab).
 
 The OptiSS is a user friendly local app (see: [What does OptiSS do?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#what-does-optiss-do), [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss), [How to set up OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-set-up-optiss)), but its Python script can be used directly in a workflow ([Implementation of OptiSS in your workflow](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#manual-usage---implementation-in-your-own-workflow)).
 
