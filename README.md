@@ -1,36 +1,31 @@
+[![DOI](https://zenodo.org/badge/416336274.svg)](https://zenodo.org/badge/latestdoi/416336274)
 # OptiSS 🧐 - Tool for optimizing spatial joining of big social media data
 
-The OptiSS Tool is a local app user friendly (hopefully =]) that optimize the spatial joining of **social media posting history** with Political-Administrative Division datasets (i.e. countries).
+The OptiSS is a tool to optimize spatial joining of big social media data with spatial layers developed in the [BORDERSPACE](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab/mobilities-and-interactions-of-people-crossing-state-borders-big-data-to-reveal-transnational-people-and-spaces) project at [Digital Geography Lab](https://www2.helsinki.fi/en/researchgroups/digital-geography-lab).
 
-The outcome is an enriched **optiss demo data.shp** that contains the attribute of administrative unit for each social media post location. You can find instructions about OptiSS in the next links:
+The OptiSS is a user friendly local app (see: [What does OptiSS do?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#what-does-optiss-do), [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss), [How to set up OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-set-up-optiss)), but its Python script can be used directly in a workflow ([Implementation of OptiSS in your workflow](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#manual-usage---implementation-in-your-own-workflow)).
 
-- [How does OptiSS work?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-does-optiss-work)
-- [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss)
-- [How to set up OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-set-up-optiss)
+## Why does it exist?
 
-For some experienced users that want to implement OptiSS algorithm in their own workflow you can do it using the script `manual_optiss.py` in the folder `arcpy`. You can follow directly the short instruction in the next link: 
+In the BORDERSPACE project, we need to assign hierarchical spatial attributes to each geo-located tweet. Mostly, geo-located tweets obtained from Twitter’s API already have geographical information such as administrative unit and country, in addition to exact coordinates. But not all tweets have such information and most importantly, some tweets are not located at land – some are just off the coast or somewhere in an ocean. However, geodetic spatial join requires computational resources and is time consuming and when having +100 million geo-located tweets it is not feasible. Thus, we created OptiSS tool to make computation more efficient and save time. 
 
-- [Implementation of OptiSS in your workflow](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#manual-usage---implementation-in-your-own-workflow)
+## What does OptiSS do?
 
-## How does OptiSS work?
-
-OptiSS tool optimize the spatial joining of social media posting history with a regions layer.
-
-With OptiSS the spatial joining is faster than using manually ArcGIS Pro console. The reason why is because this code makes efficient the process by optimizing it in two parts: ***1. Spatial join of Inland posts***, and ***2. Spatial join of Outland posts***. Commonly, the Outland posts consumes extra computational power (Geodetic Spatial Join) and takes time if you run the whole dataset in console. 
-
-OptiSS tool was tested with a **twitter posting history** dataset at global level with 50244 posts of 500 unique users in 9 years period. You can take a look to this dataset in the section [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss). The efficiency in the spatial join process with OptiSS optimized the time in 64.4% in comparison with ArcGIS pro console. You can see it in the next chart:
+We optimize the computational resources needed for the geodetic spatial join by simply dividing calculations into two different parts: 1) a spatial join of social media posts that are located at land (hereafter Inland posts); and 2) a spatial join of social media posts that are located off the coast (hereafter Outland posts). Finally, it combines both calculations together. This way, OptiSS tool makes geodetic spatial joining faster than in ArcGIS Pro console or in Geodatabase.
+The tool works for any social media data that has at least geographical coordinates, yet, our example is based on Twitter data.
+To give an example, we tested the OptiSS tool with a global geo-located tweet dataset including 50244 posts from 500 unique users over 9 years period (see dataset:  [How to use OptiSS?](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool#how-to-use-optiss)). The OptiSS tool optimized calculation time over 60% as presented in the figure below:
 
 ![test chart](png/test-chart.png)
 
 ## How to use OptiSS?
 
-OptiSS tool usage is explained in this example with a **twitter posting history** dataset at global level with 50244 posts of 500 unique users in 9 years period.  Next, you will see some details about the example and the steps that needs to be followed in OptiSS usage.
+OptiSS tool usage is explained in this example with a **twitter posting history** dataset at global level with 50244 posts of 500 unique users over 9 years period.  Next, you will see some details about the example and the steps that needs to be followed in OptiSS usage.
 
 ### Datasets
 
 You need to save your own files in folders: `app_data`, and `regions_layer`. You will find a [twitter sample dataset](https://github.com/DigitalGeographyLab/OptimizedSpatialJoin-tool/tree/main/app_data) in this repository containing 1000 posts from 4 unique users. But for this example OptiSS used next datasets:
 
-- **twitter posting history.csv** dataset at global level with 50244 posts, of 500 unique users, in 9 years posting history, delimited by semicolon. In folder `app_data`
+- **twitter posting history.csv** dataset at global level with 50244 posts, of 500 unique users, over 9 years posting history, delimited by semicolon. In folder `app_data`
 
 - **global_regions_fixed_wgs84.shp** (Database of [Global Administrative Areas](https://gadm.org/) - Internal use file). In folder `regions_layer`
  
@@ -118,9 +113,10 @@ Note! For security there is also a copy of the result in the **arcpy_env.gdb**
 
 1. While ussing the tool. Keep ArcGIS pro console closed or not using your regions file. Otherwise, it will fail the process because of **lock** (file used by other console)
 2. If you want to create a new demo dataset with a second social media posting history be sure you have erased first **arcpy_env.gdb**. The tool do not do replacements. Basically, do all again if posible in a new folder.
-3. When social media posting history is too big some geometries fail in creation. In that case you need to run a line to correct geometry. This lines are already in the scripts but not activated to make it run faster. If you encounter geometry creation problems be aware to activate this lines by erasing the **#** simbol.
+3. When social media posting history is too big some geometries fail in creation. In that case you need to add a code line to correct geometry. Mentioned code lines are already in the scripts but not activated to make it run faster. If you encounter geometry creation problems be aware to activate this lines by erasing the **#** simbol.
 
 ## Referencing
 
-There is no reference because the tool is not public at the moment.
+If you use this script in your research or project, or develop it further, please refer back to us using this:
 
+Vallejo, B & Järv, O (2021) Optiss: A tool to optimize spatial joining of big social media data. DOI: 10.5281/zenodo.5566336	
